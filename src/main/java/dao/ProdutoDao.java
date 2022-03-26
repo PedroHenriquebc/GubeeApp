@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import anotacoes.Transaction;
 import conexao.Conexao;
 import model.Produto;
 
@@ -17,6 +18,7 @@ public class ProdutoDao {
 	}
 
 	// POST
+	@Transaction
 	public void inserirProduto(Produto produto) {
 		String inserir = "INSERT INTO Produto(Nome, Descricao, Mercado_id, Tecnologia_id) VALUES (?,?,?,?)";
 
@@ -27,9 +29,11 @@ public class ProdutoDao {
 			pst.setInt(3, produto.getMercado_id());
 			pst.setInt(4, produto.getTecnologia_id());
 			pst.executeUpdate();
+			System.out.println("Finalizando execução do método 'inserirProduto' com sucesso");
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println("Finalizando execução do método 'inserirProduto' com erro");
 		}
+		
 	}
 
 	// DELETE
