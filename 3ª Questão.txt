@@ -1,0 +1,8 @@
+"Explique o que é um userprincipal e para que este é usado no dentro de uma app java."
+
+- Um UserPrincipal está relacionado à segurança de uma aplicação, diz 
+  respeito a um usuário principal que possui uma identificação e que
+  após realizada uma autenticação bem sucedida, um usuário princial pode
+  ser associado a algum assunto específico para servir como uma identificação
+  adicional. Dessa forma quaisquer decisões de autorização pode ser baseadas
+  no usuário principal que está associado ao assunto.
