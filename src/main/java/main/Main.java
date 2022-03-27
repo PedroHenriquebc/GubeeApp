@@ -10,7 +10,9 @@ public class Main {
 
 	public static void main(String[] args) {
 		ProdutoDao produtoDao = new ProdutoDao();
-		Produto produto = new Produto(16, "Produto Teste", "Descricao Produto Teste", 4, 2);
+		
+		//Criando produto com um Id de mercado alvo inexistente
+		Produto produto = new Produto(15, "Produto Teste", "Descricao Produto Teste", 4, 2);
 		String nomeMetodo;
 
 		for (Method metodo : ProdutoDao.class.getDeclaredMethods()) {
@@ -23,7 +25,8 @@ public class Main {
 		
 		System.out.println("------------------------------");
 		
-		produto = new Produto(17, "Produto Teste", "Descricao Produto Teste", 1, 2);
+		//Criando um produto com Id de marcado alvo válido
+		produto = new Produto(15, "Produto Teste", "Descricao Produto Teste", 1, 2);
 		for (Method metodo : ProdutoDao.class.getDeclaredMethods()) {
 			if (metodo.isAnnotationPresent(Transaction.class)) {
 				nomeMetodo = metodo.getName();

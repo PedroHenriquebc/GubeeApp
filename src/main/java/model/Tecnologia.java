@@ -4,7 +4,8 @@ public class Tecnologia {
 	private Integer id;
 	private String nome;
 	
-	public Tecnologia(String nome) {
+	public Tecnologia(Integer id, String nome) {
+		this.id = id;
 		this.nome = nome;
 	}
 	

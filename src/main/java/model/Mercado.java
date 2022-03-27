@@ -5,7 +5,8 @@ public class Mercado {
 	private Integer id;
 	private String nome;
 	
-	public Mercado(String nome) {
+	public Mercado(Integer id, String nome) {
+		this.id = id;
 		this.nome = nome;
 	}
 	

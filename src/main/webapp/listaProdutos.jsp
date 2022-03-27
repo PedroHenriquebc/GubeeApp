@@ -65,7 +65,7 @@ ArrayList<Produto> lista = (ArrayList<Produto>) request.getAttribute("produtos")
 	5 - React <br>
 	6 - Angular <br>
 	7 - AWS <br>
-	89 - Azure <br>
+	8 - Azure <br>
 	
 </body>
 </html>

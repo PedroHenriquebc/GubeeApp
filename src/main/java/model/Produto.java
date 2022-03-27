@@ -15,6 +15,13 @@ public class Produto {
 		this.mercado_id = mercado_id;
 		this.tecnologia_id = tecnologia_id;
 	}
+	
+	public Produto(String nome, String descricao, Integer mercado_id, Integer tecnologia_id) {
+		this.nome = nome;
+		this.descricao = descricao;
+		this.mercado_id = mercado_id;
+		this.tecnologia_id = tecnologia_id;
+	}
 
 	public Produto() {
 		

@@ -32,6 +32,23 @@ public class ProdutoDao {
 			System.out.println("Finalizando execução do método 'inserirProduto' com sucesso");
 		} catch (Exception e) {
 			System.out.println("Finalizando execução do método 'inserirProduto' com erro");
+		}	
+	}
+	
+	//POST PARA TESTE
+	public void inserirProdutoTest(Produto produto) {
+		String inserir = "INSERT INTO Produto(Id, Nome, Descricao, Mercado_id, Tecnologia_id) VALUES (?,?,?,?,?)";
+
+		try {
+			PreparedStatement pst = con.prepareStatement(inserir);
+			pst.setInt(1, produto.getId());
+			pst.setString(2, produto.getNome());
+			pst.setString(3, produto.getDescricao());
+			pst.setInt(4, produto.getMercado_id());
+			pst.setInt(5, produto.getTecnologia_id());
+			pst.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		
 	}
@@ -105,6 +122,7 @@ public class ProdutoDao {
 		return produto;
 	}
 	
+	//GET BY MERCADO_ID
 	public ArrayList<Produto> listaProdutosByMercado(String mercado_id1, String mercado_id2, String mercado_id3) {
 		ArrayList<Produto> listaProdutos = new ArrayList<>();
 		
@@ -130,6 +148,7 @@ public class ProdutoDao {
 		return listaProdutos;
 	}
 	
+	//GET BY TECNOLOGIA_ID
 	public ArrayList<Produto> listaProdutosByTech(String tecnologia_id1, String tecnologia_id2, String tecnologia_id3, String tecnologia_id4,
 												 String tecnologia_id5, String tecnologia_id6, String tecnologia_id7, String tecnologia_id8) {
 		ArrayList<Produto> listaProdutos = new ArrayList<>();
